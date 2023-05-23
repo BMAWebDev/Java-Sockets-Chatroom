@@ -61,12 +61,6 @@ public class Server {
 	}
 
 	protected void broadcastMessage(String message, ClientHandler sender) {
-		System.out.println(sender);
-		if(message == "/exit") {
-			this.closeServer();
-			return;
-		}
-
 		for (ClientHandler client : clients) {
 			client.sendMessage(message);
 		}
